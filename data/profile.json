@@ -1,0 +1,82 @@
+{
+  "personalInfo": {
+    "name": "Your Name",
+    "title": "Your Title",
+    "email": "your.email@example.com",
+    "location": "Your Location",
+    "bio": "A brief bio about yourself. This is where you can describe your background, interests, and what you're passionate about.",
+    "socialLinks": {
+      "github": "https://github.com/yourusername",
+      "linkedin": "https://linkedin.com/in/yourusername",
+      "twitter": "https://twitter.com/yourusername",
+      "website": "https://yourwebsite.com"
+    }
+  },
+  "education": [
+    {
+      "id": "1",
+      "degree": "Degree Name",
+      "institution": "Institution Name",
+      "location": "City, Country",
+      "period": "Start Year - End Year",
+      "description": "Additional details about your degree, coursework, or achievements.",
+      "gpa": "GPA (optional)"
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "title": "Project Title",
+      "description": "A brief description of your project and what it does.",
+      "technologies": ["Technology 1", "Technology 2", "Technology 3"],
+      "period": "Month Year",
+      "link": "https://project-link.com",
+      "github": "https://github.com/username/project",
+      "image": "/images/project-placeholder.jpg"
+    }
+  ],
+  "research": [
+    {
+      "id": "1",
+      "title": "Research Title",
+      "description": "Description of your research work, findings, or contributions.",
+      "institution": "Institution Name",
+      "period": "Start Year - End Year",
+      "publications": [
+        {
+          "title": "Publication Title",
+          "authors": "Author 1, Author 2, Your Name",
+          "venue": "Conference/Journal Name",
+          "year": "2024",
+          "link": "https://publication-link.com"
+        }
+      ],
+      "keywords": ["Keyword 1", "Keyword 2", "Keyword 3"]
+    }
+  ],
+  "awards": [
+    {
+      "id": "1",
+      "title": "Award Name",
+      "organization": "Organization Name",
+      "year": "2024",
+      "description": "Description of the award and why you received it."
+    }
+  ],
+  "experience": [
+    {
+      "id": "1",
+      "title": "Job Title",
+      "company": "Company Name",
+      "location": "City, Country",
+      "period": "Start Date - End Date",
+      "description": "Description of your role and responsibilities.",
+      "achievements": [
+        "Achievement 1",
+        "Achievement 2",
+        "Achievement 3"
+      ]
+    }
+  ]
+}
+
