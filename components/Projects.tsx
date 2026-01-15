@@ -1,3 +1,5 @@
+import { withBasePath } from '@/utils/path'
+
 interface Project {
     id: string
     title: string
@@ -26,7 +28,7 @@ export default function Projects({ projects }: ProjectsProps) {
                             {project.image && (
                                 <div className="w-full h-48 overflow-hidden flex-shrink-0">
                                     <img
-                                        src={project.image}
+                                        src={withBasePath(project.image)}
                                         alt={project.title}
                                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                                     />

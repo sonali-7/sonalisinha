@@ -1,3 +1,5 @@
+import { withBasePath } from '@/utils/path'
+
 interface PersonalInfo {
     name: string
     title: string
@@ -26,7 +28,7 @@ export default function Hero({ personalInfo }: HeroProps) {
                     {personalInfo.photo && (
                         <div className="flex-shrink-0 w-48 h-48 md:w-64 md:h-64">
                             <img
-                                src={personalInfo.photo}
+                                src={withBasePath(personalInfo.photo)}
                                 alt={personalInfo.name}
                                 className="w-full h-full object-cover rounded-full border-4 border-white shadow-lg"
                             />
