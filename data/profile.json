@@ -1,89 +1,157 @@
 {
     "personalInfo": {
-        "name": "Your Name",
-        "title": "Your Title",
-        "email": "your.email@example.com",
-        "location": "Your Location",
-        "bio": "A brief bio about yourself. This is where you can describe your background, interests, and what you're passionate about.",
+        "name": "Sonali Sinha",
+        "title": "Barnard College, Columbia University",
+        "email": "ss7664@barnard.edu",
+        "bio": "First-year student interested in computer science, cognitive science, and math",
+        "location": "San Francisco, CA | New York, NY",
+        "photo": "/images/Sonali.jpg",
         "socialLinks": {
-            "github": "https://github.com/yourusername",
-            "linkedin": "https://linkedin.com/in/yourusername",
-            "twitter": "https://twitter.com/yourusername",
-            "website": "https://yourwebsite.com"
+            "github": "https://github.com/sonali-7",
+            "linkedin": "https://www.linkedin.com/in/sonali-sinha-948484244/",
+            "substack": "https://substack.com/@sonalisinha1"
         }
     },
     "education": [
         {
             "id": "1",
-            "degree": "Degree Name",
-            "institution": "Institution Name",
-            "location": "City, Country",
-            "period": "Start Year - End Year",
-            "description": "Additional details about your degree, coursework, or achievements.",
-            "gpa": "GPA (optional)"
-        }
-    ],
-    "projects": [
+            "degree": "Computer Science B.A.",
+            "institution": "Barnard College, Columbia University",
+            "location": "New York, NY",
+            "period": "2025-2029",
+            "description": "Columbia Undergraduate Science Journal, Columbia AI Alignment Club Technical Fellowship (Fall '25), Gourmand Food Club"
+        },
         {
-            "id": "1",
-            "title": "Project Title",
-            "description": "A brief description of your project and what it does.",
-            "technologies": [
-                "Technology 1",
-                "Technology 2",
-                "Technology 3"
-            ],
-            "period": "Month Year",
-            "link": "https://project-link.com",
-            "github": "https://github.com/username/project",
-            "image": "/images/project-placeholder.jpg"
+            "id": "2",
+            "degree": "High School Diploma",
+            "institution": "Khan Lab School",
+            "location": "Mountain View, CA",
+            "period": "2022-2025",
+            "description": "HackaKhan Co-founder, Yearbook"
         }
     ],
     "research": [
         {
             "id": "1",
-            "title": "Research Title",
-            "description": "Description of your research work, findings, or contributions.",
-            "institution": "Institution Name",
-            "period": "Start Year - End Year",
+            "title": "BU RISE Practicum in Computational Neurobiology",
+            "description": "An intensive introduction to neuroscience and computational neurobiology, this course combined lectures, programming and modeling labs, wet-lab experiments, research training, and collaborative practicum work.",
+            "institution": "Boston University",
+            "period": "Jun 2024 - Aug 2024",
             "publications": [
                 {
-                    "title": "Publication Title",
-                    "authors": "Author 1, Author 2, Your Name",
-                    "venue": "Conference/Journal Name",
-                    "year": "2024",
-                    "link": "https://publication-link.com"
+                    "title": "Broadband Coupling to Slow-Wave Phase Acts as a Biomarker for Brain State in Ketamine-Induced Unconsciousness",
+                    "authors": "S. Sinha, A. Ao, P. Kudallur, V. Lee, A. Mittal",
+                    "link": "https://www.bu.edu/summer/files/2024/10/4-Group.pdf"
                 }
             ],
             "keywords": [
-                "Keyword 1",
-                "Keyword 2",
-                "Keyword 3"
+                "Python",
+                "Digital Signal Processing",
+                "Neuroscience"
             ]
+        },
+        {
+            "id": "2",
+            "title": "Intern, Alternative Learning Technologies and Games Lab",
+            "description": "Developed webapp to treat symptomatic PTSD through trauma-informed game design approaches.",
+            "institution": "UC Santa Cruz",
+            "period": "Jun 2023 - Aug 2023",
+            "keywords": [
+                "JavaScript",
+                "Figma",
+                "Embodied Cognition"
+            ]
+        },
+        {
+            "id": "3",
+            "title": "Feedback Control with Application to Robotics @ UC Santa Cruz",
+            "description": "Studied introductory control theory under Prof. Abhishek Halder and Prof. Ricardo Sanfelice.",
+            "institution": "California State Summer School for Mathematics & Science",
+            "period": "Jul 2022 - Aug 2022",
+            "publications": [
+                {
+                    "title": "Novel Tools Used in Human-Swarm Interaction",
+                    "authors": "S. Sinha, A. Feng, J. So",
+                    "link": "https://drive.google.com/file/d/14OPUkH3Z92GI3dnsqPgS2ZHMmNh7mYnW/view?usp=sharing"
+                }
+            ],
+            "keywords": [
+                "Human-Robot Interaction",
+                "MATLAB",
+                "Arduino"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "id": "1",
+            "title": "Drivetrain & Autonomous Director, FRC Team 1868 - Space Cookies",
+            "description": "Led development of autonomous sequences for 50+ member robotics team; 2x World Championship qualifiers.",
+            "technologies": [
+                "Java",
+                "choreo.autos",
+                "C++"
+            ],
+            "period": "Sep 2022 - May 2025",
+            "link": "https://frc.spacecookies.org/",
+            "github": "https://github.com/team1868",
+            "image": "/images/SonaliRobot2.png"
+        },
+        {
+            "id": "2",
+            "title": "Co-Founder, Hackakhan",
+            "description": "Started Khan Lab's School annual edTech hackathon; Grew to 100+ participants in 3 years",
+            "period": "Sep 2022 - May 2025",
+            "link": "https://www.hackakhan.org/",
+            "image": "/images/HackaKhan.png"
+        },
+        {
+            "id": "3",
+            "title": "Mental Health Literacy Project, Senior Capstone, Khan Lab School",
+            "description": "A platform to promote honest discussions about mental health; Accompanied by an analysis of GenAI tools for app development.",
+            "technologies": [
+                "ReactJS",
+                "GenAI",
+                "Figma"
+            ],
+            "period": "Aug 2024 - Jun 2025",
+            "link": "https://docs.google.com/document/d/1VxV3Q4SZRkVW4qLyffP7Hx7n_SVkCqFvTZmlNp2brVU/edit?usp=sharing",
+            "image": "/images/MHLP.png"
+        },
+        {
+            "id": "4",
+            "title": "Neuroanatomy Educational Website",
+            "description": "Basic educational website to teach students about brain regions; AP CS A end of term project",
+            "technologies": [
+                "ReactJS"
+            ],
+            "period": "Jun 2023",
+            "github": "https://github.com/sonali-7/Brain-Site",
+            "link": "https://brain-site.vercel.app/"
         }
     ],
     "awards": [
         {
             "id": "1",
-            "title": "Award Name",
-            "organization": "Organization Name",
-            "year": "2024",
-            "description": "Description of the award and why you received it."
-        }
-    ],
-    "experience": [
+            "title": "Aspirations in Computing, National Honorable Mention",
+            "organization": "National Center for Women & Information Technology",
+            "year": "2024, 2025",
+            "description": "Top 400/3000+ applicants; Award recipients are selected based on their aptitude and aspirations in technology and computing, as demonstrated by their computing experience, computing-related activities, leadership experience, persistence, and future plans."
+        },
         {
-            "id": "1",
-            "title": "Job Title",
-            "company": "Company Name",
-            "location": "City, Country",
-            "period": "Start Date - End Date",
-            "description": "Description of your role and responsibilities.",
-            "achievements": [
-                "Achievement 1",
-                "Achievement 2",
-                "Achievement 3"
-            ]
+            "id": "2",
+            "title": "High School Scholarship",
+            "organization": "Silicon Valley Engineering Council",
+            "year": "2025",
+            "description": "SVEC Education Awards recognize young engineering and technology students for their dedication, focus, and commitment to engineering."
+        },
+        {
+            "id": "3",
+            "title": "Best UI/UX Design for BioHelp website",
+            "organization": "GunnHacks8.0",
+            "year": "2022",
+            "description": "Sponsored by Figma; Awarded for best looking UI and clean diagrams",
+            "link": "https://devpost.com/software/biology-help"
         }
     ]
 }

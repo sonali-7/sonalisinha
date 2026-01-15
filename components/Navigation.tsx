@@ -17,8 +17,8 @@ export default function Navigation() {
     const navLinks = [
         { href: '#home', label: 'Home' },
         { href: '#education', label: 'Education' },
-        { href: '#projects', label: 'Projects' },
         { href: '#research', label: 'Research' },
+        { href: '#projects', label: 'Projects' },
         { href: '#awards', label: 'Awards' },
     ]
 
