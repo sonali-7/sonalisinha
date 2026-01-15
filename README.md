@@ -94,10 +94,33 @@ npm start
 ## Deployment
 
 This website can be easily deployed to:
+- **GitHub Pages** (configured and ready!)
 - **Vercel** (recommended for Next.js)
 - **Netlify**
-- **GitHub Pages** (with static export)
-- Any hosting service that supports Node.js
+- Any hosting service that supports static sites
+
+### Deploy to GitHub Pages
+
+The project is already configured for GitHub Pages deployment! Follow these steps:
+
+1. **Enable GitHub Pages in your repository:**
+   - Go to your repository on GitHub
+   - Navigate to **Settings** → **Pages**
+   - Under "Source", select **GitHub Actions**
+
+2. **Push your code:**
+   ```bash
+   git add .
+   git commit -m "Configure for GitHub Pages"
+   git push origin main
+   ```
+
+3. **Automatic deployment:**
+   - The GitHub Actions workflow will automatically build and deploy your site
+   - Check the **Actions** tab in your repository to see the deployment progress
+   - Your site will be available at: `https://yourusername.github.io/sonalisinha/`
+
+**Note:** If your repository name is different, update the `repositoryName` variable in `next.config.js` or set the `GITHUB_REPOSITORY` environment variable.
 
 ### Deploy to Vercel
 

@@ -3,26 +3,25 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    @apply bg-gray-50 text-gray-900;
-  }
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-gray-50 text-gray-900;
+    }
 }
 
 @layer components {
-  .section-container {
-    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12;
-  }
-  
-  .section-title {
-    @apply text-3xl font-bold text-gray-900 mb-8 text-center;
-  }
-  
-  .card {
-    @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300;
-  }
-}
+    .section-container {
+        @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12;
+    }
 
+    .section-title {
+        @apply text-3xl font-bold text-gray-900 mb-8 text-center;
+    }
+
+    .card {
+        @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300;
+    }
+}
