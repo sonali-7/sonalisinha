@@ -85,11 +85,24 @@
     "projects": [
         {
             "id": "1",
+            "title": "Linear Algebra in Epidemiology",
+            "description": "Co-authored expository math paper justifying the next-generation model for quantifying the infectiousness of diseases; Specific case study of the 2015 Ethiopian Measles Outbreak; Honors Math A final project",
+            "technologies": [
+                "Python",
+                "LaTeX",
+                "Math modeling"
+            ],
+            "period": "Nov 2025 - Dec 2025",
+            "github": "https://github.com/sonali-7/UN1207-LinAlgEpidemiology",
+            "image": "/images/LinAlg.png"
+        },
+        {
+            "id": "2",
             "title": "Drivetrain & Autonomous Director, FRC Team 1868 - Space Cookies",
-            "description": "Led development of autonomous sequences for 50+ member robotics team; 2x World Championship qualifiers.",
+            "description": "Led development of autonomous sequences for 50+ member robotics team; 2x World Championship qualifiers",
             "technologies": [
                 "Java",
-                "choreo.autos",
+                "Trajectory optimization",
                 "C++"
             ],
             "period": "Sep 2022 - May 2025",
@@ -98,7 +111,7 @@
             "image": "/images/SonaliRobot2.png"
         },
         {
-            "id": "2",
+            "id": "3",
             "title": "Co-Founder, Hackakhan",
             "description": "Started Khan Lab's School annual edTech hackathon; Grew to 100+ participants in 3 years",
             "period": "Sep 2022 - May 2025",
@@ -106,9 +119,9 @@
             "image": "/images/HackaKhan.png"
         },
         {
-            "id": "3",
+            "id": "4",
             "title": "Mental Health Literacy Project, Senior Capstone, Khan Lab School",
-            "description": "A platform to promote honest discussions about mental health; Accompanied by an analysis of GenAI tools for app development.",
+            "description": "A platform to promote honest discussions about mental health; Accompanied by an analysis of GenAI tools for app development",
             "technologies": [
                 "ReactJS",
                 "GenAI",
@@ -119,7 +132,7 @@
             "image": "/images/MHLP.png"
         },
         {
-            "id": "4",
+            "id": "5",
             "title": "Neuroanatomy Educational Website",
             "description": "Basic educational website to teach students about brain regions; AP CS A end of term project",
             "technologies": [
