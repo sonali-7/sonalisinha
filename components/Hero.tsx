@@ -1,3 +1,6 @@
+'use client'
+
+import { useState, useEffect } from 'react'
 import { withBasePath } from '@/utils/path'
 
 interface PersonalInfo {
@@ -21,6 +24,15 @@ interface HeroProps {
 }
 
 export default function Hero({ personalInfo }: HeroProps) {
+    const [photoSrc, setPhotoSrc] = useState(personalInfo.photo || '')
+
+    useEffect(() => {
+        // Update photo source on client-side to ensure basePath is detected
+        if (personalInfo.photo) {
+            setPhotoSrc(withBasePath(personalInfo.photo))
+        }
+    }, [personalInfo.photo])
+
     return (
         <section id="home" className="pt-24 pb-16 bg-gradient-to-br from-primary-50 to-white">
             <div className="section-container">
@@ -28,9 +40,16 @@ export default function Hero({ personalInfo }: HeroProps) {
                     {personalInfo.photo && (
                         <div className="flex-shrink-0 w-48 h-48 md:w-64 md:h-64">
                             <img
-                                src={withBasePath(personalInfo.photo)}
+                                src={photoSrc}
                                 alt={personalInfo.name}
                                 className="w-full h-full object-cover rounded-full border-4 border-white shadow-lg"
+                                onError={(e) => {
+                                    // Fallback: try without basePath if it fails
+                                    const target = e.target as HTMLImageElement
+                                    if (target.src.includes('/sonalisinha/')) {
+                                        target.src = personalInfo.photo || ''
+                                    }
+                                }}
                             />
                         </div>
                     )}

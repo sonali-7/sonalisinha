@@ -6,21 +6,41 @@ export function getBasePath(): string {
   // Client-side: detect basePath from current URL
   if (typeof window !== 'undefined') {
     const pathname = window.location.pathname;
-    // Extract repository name from pathname (e.g., /sonalisinha/...)
-    const parts = pathname.split('/').filter(Boolean);
-    if (parts.length > 0 && parts[0] !== 'images' && parts[0] !== '_next') {
-      // Check if this looks like a GitHub Pages repo path
-      const repoName = parts[0];
-      // Common GitHub Pages patterns: repo name, not common paths
-      if (repoName && !['index.html', '404.html'].includes(repoName)) {
-        return `/${repoName}`;
+    
+    // If we're at the root or a path that starts with the repo name, extract it
+    // Examples: /sonalisinha/ or /sonalisinha/index.html
+    const match = pathname.match(/^\/([^/]+)/);
+    if (match) {
+      const firstSegment = match[1];
+      // Exclude common paths that aren't repo names
+      if (firstSegment && 
+          firstSegment !== 'images' && 
+          firstSegment !== '_next' && 
+          firstSegment !== 'index.html' && 
+          firstSegment !== '404.html' &&
+          !firstSegment.includes('.')) {
+        return `/${firstSegment}`;
+      }
+    }
+    
+    // Fallback: check if we're on GitHub Pages by looking at the hostname
+    if (window.location.hostname.includes('github.io')) {
+      // Try to extract from the full path
+      const segments = pathname.split('/').filter(Boolean);
+      if (segments.length > 0) {
+        return `/${segments[0]}`;
       }
     }
   }
   
   // Server-side or fallback: use environment variable or default
-  if (typeof process !== 'undefined' && process.env.NODE_ENV === 'production') {
-    return process.env.NEXT_PUBLIC_BASE_PATH || '/sonalisinha';
+  if (typeof process !== 'undefined') {
+    if (process.env.NEXT_PUBLIC_BASE_PATH) {
+      return process.env.NEXT_PUBLIC_BASE_PATH;
+    }
+    if (process.env.NODE_ENV === 'production') {
+      return '/sonalisinha';
+    }
   }
   
   return '';
@@ -47,7 +67,9 @@ export function withBasePath(path: string): string {
   
   // Only prepend if we have a basePath and the path is absolute
   if (basePath && path.startsWith('/')) {
-    return `${basePath}${path}`;
+    // Remove leading slash from basePath if path already has one to avoid double slashes
+    const cleanBasePath = basePath.endsWith('/') ? basePath.slice(0, -1) : basePath;
+    return `${cleanBasePath}${path}`;
   }
   
   return path;
