@@ -20,6 +20,7 @@ export default function Navigation() {
         { href: '#research', label: 'Research' },
         { href: '#projects', label: 'Projects' },
         { href: '#awards', label: 'Awards' },
+        { href: 'https://substack.com/home/post/p-193035785', label: 'Blog'},
     ]
 
     return (

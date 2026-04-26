@@ -10,8 +10,8 @@ export default function Home() {
         <div className="bg-gray-50">
             <Hero personalInfo={profileData.personalInfo} />
             <Education education={profileData.education} />
-            <Research research={profileData.research} />
             <Projects projects={profileData.projects} />
+            <Research research={profileData.research} />
             <Awards awards={profileData.awards} />
         </div>
     )

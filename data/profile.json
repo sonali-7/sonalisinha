@@ -19,7 +19,7 @@
             "institution": "Barnard College, Columbia University",
             "location": "New York, NY",
             "period": "2025-2029",
-            "description": "Columbia Undergraduate Science Journal, Columbia AI Alignment Club Technical Fellowship (Fall '25), Gourmand Food Club"
+            "description": "Columbia Undergraduate Science Journal, Columbia AI Alignment Club Technical Fellowship (Fall '25), Undergraduate Math Society, Gourmand Food Club"
         },
         {
             "id": "2",
@@ -27,7 +27,7 @@
             "institution": "Khan Lab School",
             "location": "Mountain View, CA",
             "period": "2022-2025",
-            "description": "HackaKhan Co-founder, Yearbook"
+            "description": "HackaKhan Co-founder, Yearbook; dual enrollment at Foothill College and Stanford Online High School"
         }
     ],
     "research": [
@@ -85,6 +85,30 @@
     "projects": [
         {
             "id": "1",
+            "title": "2026 Columbia Commencement Digital Special Edition",
+            "description": "Special edition website showcasing newspaper coverage of Columbia University's 2026 commencement",
+            "technologies": [
+                "Typescript",
+                "TailwindCSS",
+                "Vite"
+            ],
+            "period": "Apr 2026 - May 2026",
+            "image": "/images/ComingSoon.png"
+        },
+        {
+            "id": "2",
+            "title": "Childcare in the City: NYC Open Data Week",
+            "description": "As an intern for the Barnard CSC, used logistic regressions and other data analysis techniques to study the relationship between family leave and employment",
+            "technologies": [
+                "Python",
+                "Data Analysis"
+            ],
+            "period": "Jan 2026 - Aprl 2026",
+            "link": "https://www.instagram.com/p/DVt6gNgAeyJ/",
+            "image": "/images/ODW.png"
+        },
+        {
+            "id": "3",
             "title": "Linear Algebra in Epidemiology",
             "description": "Co-authored expository math paper justifying the next-generation model for quantifying the infectiousness of diseases; Specific case study of the 2015 Ethiopian Measles Outbreak; Honors Math A final project",
             "technologies": [
@@ -130,17 +154,6 @@
             "period": "Aug 2024 - Jun 2025",
             "link": "https://docs.google.com/document/d/1VxV3Q4SZRkVW4qLyffP7Hx7n_SVkCqFvTZmlNp2brVU/edit?usp=sharing",
             "image": "/images/MHLP.png"
-        },
-        {
-            "id": "5",
-            "title": "Neuroanatomy Educational Website",
-            "description": "Basic educational website to teach students about brain regions; AP CS A end of term project",
-            "technologies": [
-                "ReactJS"
-            ],
-            "period": "Jun 2023",
-            "github": "https://github.com/sonali-7/Brain-Site",
-            "link": "https://brain-site.vercel.app/"
         }
     ],
     "awards": [
