@@ -78,7 +78,8 @@ export default function Research({ research }: ResearchProps) {
                                                         pub.title
                                                     )}
                                                 </p>
-                                                <p className="text-sm text-gray-600">{pub.authors}</p>
+                                                <p className="text-sm text-gray-600" dangerouslySetInnerHTML={{ __html: pub.authors }}/>
+                                                {/* <p className="text-sm text-gray-600">{pub.authors}</p> */}
                                                 {/* <p className="text-sm text-gray-600">
                                                     {pub.venue}, {pub.year}
                                                 </p> */}

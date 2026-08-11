@@ -15,7 +15,7 @@
     "education": [
         {
             "id": "1",
-            "degree": "Computer Science B.A.",
+            "degree": "Math & Computer Science B.A.",
             "institution": "Barnard College, Columbia University",
             "location": "New York, NY",
             "period": "2025-2029",
@@ -33,15 +33,15 @@
     "research": [
         {
             "id": "1",
-            "title": "BU RISE Practicum in Computational Neurobiology",
-            "description": "An intensive introduction to neuroscience and computational neurobiology, this course combined lectures, programming and modeling labs, wet-lab experiments, research training, and collaborative practicum work.",
-            "institution": "Boston University",
-            "period": "Jun 2024 - Aug 2024",
+            "title": "Neural Computation Lab",
+            "description": "Using community detection/machine learning algorithms (RenEEL) to analyze networks in the fruit fly brain.",
+            "institution": "Barnard College, Columbia University",
+            "period": "Jun 2026 - Present",
             "publications": [
                 {
-                    "title": "Broadband Coupling to Slow-Wave Phase Acts as a Biomarker for Brain State in Ketamine-Induced Unconsciousness",
-                    "authors": "S. Sinha, A. Ao, P. Kudallur, V. Lee, A. Mittal",
-                    "link": "https://www.bu.edu/summer/files/2024/10/4-Group.pdf"
+                    "title": "Redistributing the Wealth: What the Organization of Rich Club Neurons Reveals About Drosophila Brain Structure",
+                    "authors": "<b>S. Sinha</b>, G. Gutierrez",
+                    "link": "https://drive.google.com/file/d/1kQJUCWLLZ5sUrdTPWbDE0WoNTfmf-5Ty/view?usp=sharing"
                 }
             ],
             "keywords": [
@@ -52,6 +52,25 @@
         },
         {
             "id": "2",
+            "title": "BU RISE Practicum in Computational Neurobiology",
+            "description": "An intensive introduction to neuroscience and computational neurobiology, this course combined lectures, programming and modeling labs, wet-lab experiments, research training, and collaborative practicum work.",
+            "institution": "Boston University",
+            "period": "Jun 2024 - Aug 2024",
+            "publications": [
+                {
+                    "title": "Broadband Coupling to Slow-Wave Phase Acts as a Biomarker for Brain State in Ketamine-Induced Unconsciousness",
+                    "authors": "A. Ao, P. Kudallur, V. Lee, A. Mittal, <b>S. Sinha</b>",
+                    "link": "https://www.bu.edu/summer/files/2024/10/4-Group.pdf"
+                }
+            ],
+            "keywords": [
+                "Python",
+                "Digital Signal Processing",
+                "Neuroscience"
+            ]
+        },
+        {
+            "id": "3",
             "title": "Intern, Alternative Learning Technologies and Games Lab",
             "description": "Developed webapp to treat symptomatic PTSD through trauma-informed game design approaches.",
             "institution": "UC Santa Cruz",
@@ -63,7 +82,7 @@
             ]
         },
         {
-            "id": "3",
+            "id": "4",
             "title": "Feedback Control with Application to Robotics @ UC Santa Cruz",
             "description": "Studied introductory control theory under Prof. Abhishek Halder and Prof. Ricardo Sanfelice.",
             "institution": "California State Summer School for Mathematics & Science",
@@ -71,7 +90,7 @@
             "publications": [
                 {
                     "title": "Novel Tools Used in Human-Swarm Interaction",
-                    "authors": "S. Sinha, A. Feng, J. So",
+                    "authors": "<b>S. Sinha</b>, A. Feng, J. So",
                     "link": "https://drive.google.com/file/d/14OPUkH3Z92GI3dnsqPgS2ZHMmNh7mYnW/view?usp=sharing"
                 }
             ],
@@ -93,7 +112,9 @@
                 "Vite"
             ],
             "period": "Apr 2026 - May 2026",
-            "image": "/images/ComingSoon.png"
+            "github": "https://github.com/spectatorpublishing/commencement-2026",
+            "link": "https://commencement2026.columbiaspectator.com/",
+            "image": "/images/Commencement.png"
         },
         {
             "id": "2",
@@ -103,7 +124,7 @@
                 "Python",
                 "Data Analysis"
             ],
-            "period": "Jan 2026 - Aprl 2026",
+            "period": "Jan 2026 - Apr 2026",
             "link": "https://www.instagram.com/p/DVt6gNgAeyJ/",
             "image": "/images/ODW.png"
         },
@@ -121,7 +142,7 @@
             "image": "/images/LinAlg.png"
         },
         {
-            "id": "2",
+            "id": "4",
             "title": "Drivetrain & Autonomous Director, FRC Team 1868 - Space Cookies",
             "description": "Led development of autonomous sequences for 50+ member robotics team; 2x World Championship qualifiers",
             "technologies": [
@@ -135,7 +156,7 @@
             "image": "/images/SonaliRobot2.png"
         },
         {
-            "id": "3",
+            "id": "5",
             "title": "Co-Founder, Hackakhan",
             "description": "Started Khan Lab's School annual edTech hackathon; Grew to 100+ participants in 3 years",
             "period": "Sep 2022 - May 2025",
@@ -143,7 +164,7 @@
             "image": "/images/HackaKhan.png"
         },
         {
-            "id": "4",
+            "id": "6",
             "title": "Mental Health Literacy Project, Senior Capstone, Khan Lab School",
             "description": "A platform to promote honest discussions about mental health; Accompanied by an analysis of GenAI tools for app development",
             "technologies": [
