@@ -42,3 +42,36 @@
 .project-scroller::-webkit-scrollbar {
     display: none;
 }
+
+@property --p {
+    syntax: "<percentage>";
+    inherits: true;
+    initial-value: 10%;
+}
+
+.bio-line {
+    --p: 5%;
+    animation: bio-walk 2.5s linear forwards;
+}
+
+.bio-text {
+    clip-path: inset(0 calc(100% - var(--p)) 0 0);
+}
+
+
+@keyframes bio-walk {
+    to {
+        --p: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bio-line {
+        animation: none;
+        --p: 100%;
+    }
+
+    .bio-sun {
+        display: none;
+    }
+}

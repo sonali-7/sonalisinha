@@ -48,8 +48,9 @@ export default function Hero({ personalInfo }: HeroProps) {
                             <p className="mt-1 text-base font-bold text-gray-900">
                                 {personalInfo.title}
                             </p>
-                            <p className="mt-4 text-sm text-gray-800 max-w-2xl">
-                                {personalInfo.bio}
+                            <p className="bio-line relative mt-4 max-w-2xl text-sm text-gray-800">
+                                <span className="bio-text">{personalInfo.bio}</span>
+                                <span className="bio-sun" aria-hidden="true">☀︎</span>
                             </p>
                             <p className="mt-3 text-sm text-gray-700">
                                 <a href={`mailto:${personalInfo.email}`} className="hover:underline">
