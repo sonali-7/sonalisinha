@@ -5,7 +5,6 @@ import Link from 'next/link'
 export default function Navigation() {
     const navLinks = [
         { href: '#home', label: 'Home' },
-        { href: '#education', label: 'Education' },
         { href: '#projects', label: 'Projects' },
         { href: '#research', label: 'Research' },
         { href: 'https://substack.com/home/post/p-193035785', label: 'Blog' },

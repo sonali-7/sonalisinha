@@ -2,8 +2,8 @@
     "personalInfo": {
         "name": "Sonali Sinha",
         "title": "Barnard College, Columbia University",
-        "email": "ss7664@barnard.edu",
-        "bio": "Interested in computer science, network science, and math",
+        "email": "sonaliasinha1 [at] gmail [dot] com",
+        "bio": "Interested in computer science, network science, and math. ",
         "location": "San Francisco, CA | New York, NY",
         "photo": "/images/Sonali.JPG",
         "socialLinks": {
@@ -12,15 +12,7 @@
             "substack": "https://substack.com/@sonalisinha1"
         }
     },
-    "education": [
-        {
-            "id": "1",
-            "degree": "Math & Computer Science B.A.",
-            "institution": "Barnard College, Columbia University",
-            "location": "New York, NY",
-            "period": "2025-2029"
-        }
-    ],
+    "education": [],
     "research": [
         {
             "id": "1",
@@ -148,5 +140,6 @@
             "link": "https://docs.google.com/document/d/1VxV3Q4SZRkVW4qLyffP7Hx7n_SVkCqFvTZmlNp2brVU/edit?usp=sharing",
             "image": "/images/MHLP.png"
         }
-    ]
+    ],
+    "awards": []
 }

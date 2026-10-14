@@ -40,25 +40,27 @@ export default function Hero({ personalInfo }: HeroProps) {
         <header id="home" className="pt-20 pb-1">
             <div className="section-container">
                 <div className="flex items-start justify-between gap-6">
-                    <div>
-                        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
-                            {personalInfo.name}
-                        </h1>
-                        <p className="mt-1 text-base font-bold text-gray-900">
-                            {personalInfo.title}
-                        </p>
-                        <p className="mt-4 text-sm leading-relaxed text-gray-800 max-w-2xl">
-                            {personalInfo.bio}
-                        </p>
-                        <p className="mt-3 text-sm text-gray-700">
-                            <a href={`mailto:${personalInfo.email}`} className="hover:underline">
-                                {personalInfo.email}
-                            </a>
-                            <span className="mx-2 text-gray-400">·</span>
-                            {personalInfo.location}
-                        </p>
+                    <div className="flex flex-col self-stretch">
+                        <div>
+                            <h1 className="text-2xl sm:text-2xl font-bold text-gray-900">
+                                {personalInfo.name}
+                            </h1>
+                            <p className="mt-1 text-base font-bold text-gray-900">
+                                {personalInfo.title}
+                            </p>
+                            <p className="mt-4 text-sm text-gray-800 max-w-2xl">
+                                {personalInfo.bio}
+                            </p>
+                            <p className="mt-3 text-sm text-gray-700">
+                                <a href={`mailto:${personalInfo.email}`} className="hover:underline">
+                                    {personalInfo.email}
+                                </a>
+                                <span className="mx-2 text-gray-400">·</span>
+                                {personalInfo.location}
+                            </p>
+                        </div>
                         {links.length > 0 && (
-                            <p className="mt-1 text-sm">
+                            <p className="mt-auto text-sm leading-relaxed">
                                 {links.map((link, index) => (
                                     <span key={link.label}>
                                         {index > 0 && <span className="mx-2 text-gray-400">·</span>}
@@ -75,21 +77,23 @@ export default function Hero({ personalInfo }: HeroProps) {
                             </p>
                         )}
                     </div>
-                    {personalInfo.photo && (
-                        <img
-                            src={photoSrc}
-                            alt={personalInfo.name}
-                            className="hidden sm:block w-40 md:w-48 aspect-square object-cover flex-shrink-0 shadow-sm"
-                            onError={(e) => {
-                                const target = e.target as HTMLImageElement
-                                if (target.src.includes('/sonalisinha/')) {
-                                    target.src = personalInfo.photo || ''
-                                }
-                            }}
-                        />
-                    )}
+                    <div className="hidden sm:block w-40 md:w-48 aspect-[4/3.5] overflow-hidden flex-shrink-0 shadow-sm">
+                        {personalInfo.photo && (
+                            <img
+                                src={photoSrc}
+                                alt={personalInfo.name}
+                                className="h-[130%] w-[150%] object-cover scale-125 origin-right"
+                                onError={(e) => {
+                                    const target = e.target as HTMLImageElement
+                                    if (target.src.includes('/sonalisinha/')) {
+                                        target.src = personalInfo.photo || ''
+                                    }
+                                }}
+                            />
+                        )}
+                    </div>
                 </div>
             </div>
-        </header>
+        </header >
     )
 }

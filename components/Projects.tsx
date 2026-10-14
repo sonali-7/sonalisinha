@@ -142,7 +142,7 @@ export default function Projects({ projects }: ProjectsProps) {
     const selected = projects.find((project) => project.id === selectedId) || null
 
     return (
-        <section id="projects" className="py-4">
+        <section id="projects" className="py-4 pb-0">
             <div className="section-container">
                 <h2 className="section-title">Projects</h2>
                 <div className="project-scroller flex gap-3 overflow-x-auto snap-x snap-mandatory pb-3">
