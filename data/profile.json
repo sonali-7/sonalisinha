@@ -51,18 +51,6 @@
                 "Digital Signal Processing",
                 "Neuroscience"
             ]
-        },
-        {
-            "id": "3",
-            "title": "Intern, Alternative Learning Technologies and Games Lab",
-            "description": "Developed webapp to treat symptomatic PTSD through trauma-informed game design approaches.",
-            "institution": "UC Santa Cruz",
-            "period": "Jun 2023 - Aug 2023",
-            "keywords": [
-                "JavaScript",
-                "Figma",
-                "Embodied Cognition"
-            ]
         }
     ],
     "projects": [
