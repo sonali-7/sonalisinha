@@ -7,7 +7,7 @@ import profileData from '@/data/profile.json'
 
 export default function Home() {
     return (
-        <div className="bg-gray-50">
+        <div className="bg-white pb-16">
             <Hero personalInfo={profileData.personalInfo} />
             <Education education={profileData.education} />
             <Projects projects={profileData.projects} />
@@ -16,4 +16,3 @@ export default function Home() {
         </div>
     )
 }
-

@@ -24,75 +24,55 @@ export default function Research({ research }: ResearchProps) {
     if (!research || research.length === 0) return null
 
     return (
-        <section id="research" className="py-10 bg-gray-50">
+        <section id="research" className="py-4">
             <div className="section-container">
                 <h2 className="section-title">Research</h2>
-                <div className="space-y-8">
+                <div className="space-y-5">
                     {research.map((item) => (
-                        <div key={item.id} className="card">
-                            <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
-                                <div className="flex-1">
-                                    <h3 className="text-xl font-bold text-gray-900">
-                                        {item.title}
-                                    </h3>
-                                    <p className="text-l text-primary-600 mb-1">
-                                        {item.institution}
-                                    </p>
-                                </div>
-                                <div className="text-gray-500 font-medium">
-                                    {item.period}
-                                </div>
+                        <article key={item.id}>
+                            <div className="flex items-baseline justify-between gap-4">
+                                <h3 className="entry-title">{item.title}</h3>
+                                <span className="entry-meta shrink-0">{item.period}</span>
                             </div>
-                            <p className="text-gray-700 mb-2">{item.description}</p>
-
+                            <p className="entry-meta">{item.institution}</p>
+                            <p className="entry-body">{item.description}</p>
                             {item.keywords && item.keywords.length > 0 && (
-                                <div className="flex flex-wrap gap-2 mb-2">
-                                    {item.keywords.map((keyword, index) => (
-                                        <span
-                                            key={index}
-                                            className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
-                                        >
-                                            {keyword}
-                                        </span>
+                                <p className="entry-body">
+                                    <span className="font-bold">Skills.</span>{' '}
+                                    {item.keywords.join(', ')}
+                                </p>
+                            )}
+                            {item.publications && item.publications.length > 0 && (
+                                <div className="mt-2 space-y-2">
+                                    {item.publications.map((pub, index) => (
+                                        <div key={index}>
+                                            <p className="text-sm font-bold text-gray-900">Poster</p>
+                                            <p className="text-sm text-gray-800">
+                                                {pub.link ? (
+                                                    <a
+                                                        href={pub.link}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="underline underline-offset-2 hover:text-gray-600"
+                                                    >
+                                                        {pub.title}
+                                                    </a>
+                                                ) : (
+                                                    pub.title
+                                                )}
+                                            </p>
+                                            <p
+                                                className="text-sm text-gray-600"
+                                                dangerouslySetInnerHTML={{ __html: pub.authors }}
+                                            />
+                                        </div>
                                     ))}
                                 </div>
                             )}
-
-                            {item.publications && item.publications.length > 0 && (
-                                <div className="mt-4 pt-4 border-t border-gray-200">
-                                    <h4 className="font-semibold text-gray-900 mb-3">Poster</h4>
-                                    <div className="space-y-3">
-                                        {item.publications.map((pub, index) => (
-                                            <div key={index} className="text-gray-700">
-                                                <p className="font-medium mb-1">
-                                                    {pub.link ? (
-                                                        <a
-                                                            href={pub.link}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className="text-primary-600 hover:text-primary-700 hover:underline"
-                                                        >
-                                                            {pub.title}
-                                                        </a>
-                                                    ) : (
-                                                        pub.title
-                                                    )}
-                                                </p>
-                                                <p className="text-sm text-gray-600" dangerouslySetInnerHTML={{ __html: pub.authors }}/>
-                                                {/* <p className="text-sm text-gray-600">{pub.authors}</p> */}
-                                                {/* <p className="text-sm text-gray-600">
-                                                    {pub.venue}, {pub.year}
-                                                </p> */}
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
-                        </div>
+                        </article>
                     ))}
                 </div>
             </div>
         </section>
     )
 }
-

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { withBasePath } from '@/utils/path'
 
 interface Project {
@@ -18,104 +18,156 @@ interface ProjectsProps {
     projects: Project[]
 }
 
-function ProjectCard({ project }: { project: Project }) {
-    const [imageSrc, setImageSrc] = useState(project.image || '')
+function useAssetSrc(path?: string) {
+    const [src, setSrc] = useState(path || '')
 
     useEffect(() => {
-        if (project.image) {
-            setImageSrc(withBasePath(project.image))
-        }
-    }, [project.image])
+        if (path) setSrc(withBasePath(path))
+    }, [path])
+
+    return src
+}
+
+function ProjectImage({ project, className }: { project: Project; className?: string }) {
+    const src = useAssetSrc(project.image)
+
+    if (!project.image) return null
 
     return (
-        <div className={`card flex flex-col h-full ${project.image ? 'overflow-hidden p-0' : ''}`}>
-            {project.image && (
-                <div className="w-full h-48 overflow-hidden flex-shrink-0">
-                    <img
-                        src={imageSrc}
-                        alt={project.title}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                        onError={(e) => {
-                            // Fallback: try without basePath if it fails
-                            const target = e.target as HTMLImageElement
-                            if (target.src.includes('/sonalisinha/')) {
-                                target.src = project.image || ''
-                            }
-                        }}
-                    />
-                </div>
-            )}
-            <div className={`flex flex-col flex-grow ${project.image ? 'p-6' : ''}`}>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    {project.title}
-                </h3>
-                <p className="text-gray-700 mb-4 flex-grow">
-                    {project.description}
-                </p>
-                <div className="mt-auto">
+        <img
+            src={src}
+            alt=""
+            className={className}
+            onError={(e) => {
+                const target = e.target as HTMLImageElement
+                if (target.src.includes('/sonalisinha/')) {
+                    target.src = project.image || ''
+                }
+            }}
+        />
+    )
+}
+
+function ProjectArticle({ project, onClose }: { project: Project; onClose: () => void }) {
+    useEffect(() => {
+        const onKey = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') onClose()
+        }
+        document.addEventListener('keydown', onKey)
+        const previousOverflow = document.body.style.overflow
+        document.body.style.overflow = 'hidden'
+        return () => {
+            document.removeEventListener('keydown', onKey)
+            document.body.style.overflow = previousOverflow
+        }
+    }, [onClose])
+
+    return (
+        <div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8"
+            role="presentation"
+            onClick={onClose}
+        >
+            <div className="absolute inset-0 bg-black/40" />
+            <article
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="project-article-title"
+                className="relative z-10 w-full max-w-2xl bg-white border border-gray-300 shadow-lg"
+                onClick={(event) => event.stopPropagation()}
+            >
+                <ProjectImage project={project} className="w-full h-96 object-cover" />
+                <div className="p-5 sm:p-6">
+                    <div className="flex items-start justify-between gap-4">
+                        <h3 id="project-article-title" className="text-lg font-bold text-gray-900">
+                            {project.title}
+                        </h3>
+                        <button
+                            type="button"
+                            onClick={onClose}
+                            className="shrink-0 text-lg text-gray-500 hover:text-gray-900"
+                            aria-label="Close"
+                        >
+                            &times;
+                        </button>
+                    </div>
+                    <p className="mt-1 text-sm text-gray-600">{project.period}</p>
+                    <p className="mt-3 text-sm leading-relaxed text-gray-800">
+                        {project.description}
+                    </p>
                     {project.technologies && project.technologies.length > 0 && (
-                        <div className="flex flex-wrap gap-2 mb-4">
-                            {project.technologies.map((tech, index) => (
-                                <span
-                                    key={index}
-                                    className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium"
-                                >
-                                    {tech}
-                                </span>
-                            ))}
-                        </div>
+                        <p className="mt-3 text-sm leading-relaxed text-gray-800">
+                            <span className="font-bold">Skills.</span>{' '}
+                            {project.technologies.join(', ')}
+                        </p>
                     )}
-                    <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                        <span>{project.period}</span>
-                    </div>
-                    <div className="flex space-x-4">
-                        {project.github && (
-                            <a
-                                href={project.github}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-primary-600 hover:text-primary-700 font-medium flex items-center"
-                            >
-                                <svg className="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                                </svg>
-                                Code
-                            </a>
-                        )}
-                        {project.link && (
-                            <a
-                                href={project.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-primary-600 hover:text-primary-700 font-medium flex items-center"
-                            >
-                                <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                </svg>
-                                Link
-                            </a>
-                        )}
-                    </div>
+                    {(project.github || project.link) && (
+                        <p className="mt-4 text-sm">
+                            {project.github && (
+                                <a
+                                    href={project.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="font-bold underline underline-offset-2 hover:text-gray-600"
+                                >
+                                    Code
+                                </a>
+                            )}
+                            {project.github && project.link && (
+                                <span className="mx-2 text-gray-400">·</span>
+                            )}
+                            {project.link && (
+                                <a
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="font-bold underline underline-offset-2 hover:text-gray-600"
+                                >
+                                    Link
+                                </a>
+                            )}
+                        </p>
+                    )}
                 </div>
-            </div>
+            </article>
         </div>
     )
 }
 
 export default function Projects({ projects }: ProjectsProps) {
+    const [selectedId, setSelectedId] = useState<string | null>(null)
+
     if (!projects || projects.length === 0) return null
 
+    const selected = projects.find((project) => project.id === selectedId) || null
+
     return (
-        <section id="projects" className="py-10 bg-white">
+        <section id="projects" className="py-4">
             <div className="section-container">
                 <h2 className="section-title">Projects</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="project-scroller flex gap-3 overflow-x-auto snap-x snap-mandatory pb-3">
                     {projects.map((project) => (
-                        <ProjectCard key={project.id} project={project} />
+                        <button
+                            key={project.id}
+                            type="button"
+                            onClick={() => setSelectedId(project.id)}
+                            aria-label={`Open ${project.title}`}
+                            className="group relative snap-start shrink-0 w-[78%] sm:w-[30%] aspect-[4/3] overflow-hidden bg-gray-100 text-left"
+                        >
+                            <ProjectImage
+                                project={project}
+                                className="h-full w-full object-cover"
+                            />
+                            <span className="pointer-events-none absolute inset-0 flex items-end bg-black/55 p-3 text-sm font-bold leading-snug text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
+                                {project.title}
+                            </span>
+                        </button>
                     ))}
                 </div>
             </div>
+            {selected && (
+                <ProjectArticle project={selected} onClose={() => setSelectedId(null)} />
+            )}
         </section>
     )
 }
-

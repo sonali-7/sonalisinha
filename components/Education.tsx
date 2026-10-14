@@ -16,39 +16,32 @@ export default function Education({ education }: EducationProps) {
     if (!education || education.length === 0) return null
 
     return (
-        <section id="education" className="py-10 bg-white">
+        <section id="education" className="py-4">
             <div className="section-container">
                 <h2 className="section-title">Education</h2>
-                <div className="space-y-6">
+                <div className="space-y-5">
                     {education.map((item) => (
-                        <div key={item.id} className="card">
-                            <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
-                                <div className="flex-1">
-                                    <h3 className="text-xl font-bold text-gray-900">
-                                        {item.degree}
-                                    </h3>
-                                    <p className="text-l text-primary-600">
-                                        {item.institution}
-                                    </p>
-                                    <p className="text-gray-600 ">{item.location}</p>
-                                </div>
-                                <div className="text-gray-500 font-medium">
-                                    {item.period}
-                                </div>
+                        <article key={item.id}>
+                            <div className="flex items-baseline justify-between gap-4">
+                                <h3 className="entry-title">{item.degree}</h3>
+                                <span className="entry-meta shrink-0">{item.period}</span>
                             </div>
+                            <p className="entry-meta">
+                                {item.institution}
+                                {item.location ? `, ${item.location}` : ''}
+                            </p>
                             {item.description && (
-                                <p className="text-gray-700 mb-2">{item.description}</p>
+                                <p className="entry-body">{item.description}</p>
                             )}
                             {item.gpa && (
-                                <p className="text-gray-600">
-                                    <span className="font-semibold">GPA:</span> {item.gpa}
+                                <p className="entry-body">
+                                    <span className="font-bold">GPA.</span> {item.gpa}
                                 </p>
                             )}
-                        </div>
+                        </article>
                     ))}
                 </div>
             </div>
         </section>
     )
 }
-

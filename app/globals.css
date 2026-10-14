@@ -8,20 +8,37 @@
     }
 
     body {
-        @apply bg-gray-50 text-gray-900;
+        @apply bg-white text-gray-900 antialiased;
+    }
+
+    section,
+    header {
+        scroll-margin-top: 5.5rem;
     }
 }
 
 @layer components {
     .section-container {
-        @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-2;
+        @apply max-w-3xl mx-auto px-5 sm:px-6;
     }
 
     .section-title {
-        @apply text-3xl font-bold text-gray-900 mb-8 text-center;
+        @apply text-base font-bold tracking-wide text-gray-900 mb-3 pb-1 border-b border-gray-900;
     }
 
-    .card {
-        @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300;
+    .entry-title {
+        @apply font-bold text-gray-900;
     }
+
+    .entry-meta {
+        @apply text-sm text-gray-600;
+    }
+
+    .entry-body {
+        @apply mt-1 text-sm leading-relaxed text-gray-800;
+    }
+}
+
+.project-scroller::-webkit-scrollbar {
+    display: none;
 }
