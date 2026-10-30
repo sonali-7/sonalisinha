@@ -7,7 +7,7 @@ export default function Navigation() {
         { href: '#home', label: 'Home' },
         { href: '#projects', label: 'Projects' },
         { href: '#research', label: 'Research' },
-        { href: 'https://substack.com/home/post/p-193035785', label: 'Blog' },
+        { href: 'https://substack.com/@sonalisinha1/posts', label: 'Blog' },
     ]
 
     return (
